@@ -10,3 +10,4 @@ docker run --rm -it -p 8000:8000 jupyter/datascience-notebook /bin/bash -c "jupy
 
 TODO: 
 disable jupyter token
+--NotebookApp.token='' --NotebookApp.password=''
