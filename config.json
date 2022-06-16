@@ -1,16 +1,17 @@
 {
-    "name": "Jupyter datascience notebook",
-    "type": "app",
-    "version": "2.0.0",
-    "categories": [
-      "development"
-    ],
-    "description": "Run Jupyterlab server on your computer with Supervisely Agent and access it from anywhere",
-    "docker_image": "jupyter/datascience-notebook",
-    "entrypoint": "jupyter lab --ip=0.0.0.0 --port=8000 --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin=* --NotebookApp.base_url=$BASE_URL --NotebookApp.trust_xheaders=True --NotebookApp.disable_check_xsrf=True",
-    "port": 8000, 
-    "proxyKeepUrl": true,
-    "task_location": "application_sessions",
-    "icon": "https://img.icons8.com/fluency/144/000000/jupyter.png",
-    "icon_background": "#FFFFFF"
-  }
+  "name": "Jupyter datascience notebook",
+  "type": "app",
+  "version": "2.0.0",
+  "categories": [
+    "development"
+  ],
+  "description": "Run Jupyterlab server on your computer with Supervisely Agent and access it from anywhere",
+  "docker_image": "jupyter/datascience-notebook",
+  "entrypoint": "jupyter lab --ip=0.0.0.0 --port=8000 --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin=* --NotebookApp.base_url=$BASE_URL --NotebookApp.trust_xheaders=True --NotebookApp.disable_check_xsrf=True",
+  "port": 8000,
+  "proxyKeepUrl": true,
+  "task_location": "application_sessions",
+  "icon": "https://img.icons8.com/fluency/144/000000/jupyter.png",
+  "icon_background": "#FFFFFF",
+  "community_agent": false
+}
