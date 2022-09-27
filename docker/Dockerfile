@@ -6,4 +6,6 @@ ENV CHOWN_EXTRA_OPTS -R
 
 WORKDIR /sly-app-data
 
+USER root
+
 RUN pip install supervisely==6.63.0
