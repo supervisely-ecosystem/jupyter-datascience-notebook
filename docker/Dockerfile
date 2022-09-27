@@ -1,8 +1,10 @@
 FROM jupyter/datascience-notebook
 
-ENV NB_USER supervisely
+ENV CHOWN_EXTRA /sly-app-data
 ENV CHOWN_HOME yes
 ENV CHOWN_EXTRA_OPTS -R
+
+RUN mkdir /sly-app-data
 
 WORKDIR /sly-app-data
 USER root
