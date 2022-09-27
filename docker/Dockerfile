@@ -8,7 +8,4 @@ WORKDIR /sly-app-data
 
 USER root
 
-RUN mkdir /sly-app-data
-
-
 RUN pip install supervisely==6.63.0
