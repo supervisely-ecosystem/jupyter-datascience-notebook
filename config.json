@@ -14,5 +14,6 @@
   "icon": "https://img.icons8.com/fluency/144/000000/jupyter.png",
   "icon_background": "#FFFFFF",
   "community_agent": false,
-  "integrated_into": ["standalone"]
+  "integrated_into": ["standalone"],
+  "poster":"https://user-images.githubusercontent.com/48913536/193065037-3ad134cb-194f-4016-882e-326587ee096f.png"
 }
