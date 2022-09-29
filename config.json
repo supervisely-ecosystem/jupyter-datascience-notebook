@@ -7,7 +7,7 @@
   ],
   "description": "Run Jupyterlab server on your computer with Supervisely Agent and access it from anywhere",
   "docker_image": "supervisely/jupyter-datascience-notebook:1.0.2",
-  "entrypoint": "sh /sly-workdir/run.sh",
+  "entrypoint": "sh /repo/run.sh",
   "port": 8000,
   "proxyKeepUrl": true,
   "task_location": "application_sessions",
