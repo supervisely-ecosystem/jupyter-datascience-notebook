@@ -29,5 +29,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          file: docker/Dockerfile
+          file: Dockerfile
           tags: supervisely/jupyter-datascience-notebook:${{ github.event.inputs.tag_version }}
