@@ -6,7 +6,10 @@
 <p align="center">
   <a href="#Overview">Overview</a> •
   <a href="#How-To-Run">How To Run</a> •
-  <a href="#Demo">Demo</a>
+  <a href="#Demo">Demo</a> •
+  <a href="#Requirements">Requirements</a> •
+  <a href="#Debug">Debug</a> •
+  <a href="#Acknowledgment">Acknowledgment</a>
 </p>
 
 [![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/jupyter-datascience-notebook)
