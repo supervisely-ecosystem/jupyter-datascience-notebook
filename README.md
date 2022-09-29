@@ -39,7 +39,8 @@ Files will be saved directly on the agent, or you can synchronize it with Git.
 ## Demo
 
 Supervisely jupyter datascience notebook app comes with an example notebook explaining how to:
-1) How to create supervisely API object
+
+1) Create supervisely API object
 2) Get user info
 3) List all the user teams
 
