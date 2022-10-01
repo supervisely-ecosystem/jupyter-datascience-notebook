@@ -10,8 +10,8 @@ if sly.is_development():
     load_dotenv("preprocessing/local.env")
     load_dotenv(os.path.expanduser("~/supervisely.env"))
 
-input_file = os.environ.get("context.slyFile")
-team_id = int(os.environ["context.teamId"])
+input_file = os.environ.get("CONTEXT_SLYFILE")
+team_id = int(os.environ["CONTEXT_TEAMID"])
 
 default_nb = "demo.ipynb"
 default_path = None
