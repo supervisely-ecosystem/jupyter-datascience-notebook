@@ -1,12 +1,14 @@
 import os
-import subprocess
-import shlex
+
+# import subprocess
+# import shlex
 from dotenv import load_dotenv
 import supervisely as sly
 
 # for convenient debug, has no effect in production
-load_dotenv("preprocessing/local.env")
-load_dotenv(os.path.expanduser("~/supervisely.env"))
+if sly.is_development():
+    load_dotenv("preprocessing/local.env")
+    load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 input_file = os.environ.get("context.slyFile")
 team_id = int(os.environ["context.teamId"])
@@ -16,7 +18,7 @@ default_path = None
 
 if input_file is None:
     sly.logger.info("App is started from ecosystem")
-    default_path = os.path.join(sly.app.get_data_dir(), default_nb)
+    default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
     sly.fs.copy_file(src=default_nb, dst=default_path)
 else:
     sly.logger.info(f"App is started from context menu of file in TeamFiles: {input_file}")
@@ -28,13 +30,13 @@ else:
         )
     else:
         default_nb = sly.fs.get_file_name_with_ext(input_file)
-        default_path = os.path.join(sly.app.get_data_dir(), default_nb)
+        default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
 
         api = sly.Api()
         api.file.download(
             team_id,
             remote_path=input_file,
-            local_save_path=os.path.join(sly.app.get_data_dir(), default_nb),
+            local_save_path=os.path.join(sly.app.get_synced_data_dir(), default_nb),
         )
 
 sly.logger.info(f"Default notebook: {default_path}")
