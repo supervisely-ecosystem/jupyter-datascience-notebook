@@ -16,5 +16,8 @@
   "store_data_on_agent": true,
   "community_agent": false,
   "min_agent_version": "6.7.0",
-  "_min_instance_version": "6.5.44"
+  "_min_instance_version": "6.5.44",
+  "context_menu": {
+    "target": ["files_file"]
+  }
 }
