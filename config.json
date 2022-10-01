@@ -2,18 +2,17 @@
   "name": "Jupyter datascience notebook",
   "type": "app",
   "version": "2.0.0",
-  "categories": [
-    "development"
-  ],
+  "categories": ["development"],
   "description": "Run Jupyterlab server on your computer with Supervisely Agent and access it from anywhere",
+  "icon": "https://img.icons8.com/fluency/144/000000/jupyter.png",
+  "icon_background": "#FFFFFF",
+  "poster": "https://user-images.githubusercontent.com/48913536/193065037-3ad134cb-194f-4016-882e-326587ee096f.png",
   "docker_image": "supervisely/jupyter-datascience-notebook:1.0.4",
   "entrypoint": "sh /repo/run.sh",
   "port": 8000,
   "proxyKeepUrl": true,
   "task_location": "application_sessions",
-  "icon": "https://img.icons8.com/fluency/144/000000/jupyter.png",
-  "icon_background": "#FFFFFF",
-  "community_agent": false,
   "integrated_into": ["standalone"],
-  "poster":"https://user-images.githubusercontent.com/48913536/193065037-3ad134cb-194f-4016-882e-326587ee096f.png"
+  "community_agent": false,
+  "min_agent_version": "6.6.9"
 }
