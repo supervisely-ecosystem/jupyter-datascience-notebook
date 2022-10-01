@@ -16,5 +16,5 @@
   "store_data_on_agent": true,
   "community_agent": false,
   "min_agent_version": "6.6.9",
-  "min_instance_version": "6.5.43"
+  "_min_instance_version": "6.5.44"
 }
