@@ -42,6 +42,9 @@ else:
 
 sly.logger.info(f"Default notebook: {default_path}")
 
+with open("default_url.txt", "w") as text_file:
+    text_file.write(f"/lab/tree/{default_nb}")
+
 # try:
 #     process = subprocess.run(
 #         shlex.split(
