@@ -14,11 +14,11 @@ input_file = os.environ.get("CONTEXT_SLYFILE")
 team_id = int(os.environ["CONTEXT_TEAMID"])
 
 default_nb = "demo.ipynb"
-default_path = None
+default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
+
 
 if input_file is None:
     sly.logger.info("App is started from ecosystem")
-    default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
     sly.fs.copy_file(src=default_nb, dst=default_path)
 else:
     sly.logger.info(f"App is started from context menu of file in TeamFiles: {input_file}")
@@ -28,6 +28,7 @@ else:
             "JupyterLab Notebook can only be started from the context menu of '.ipynb' file or from Ecosystem. \n"
             + f"Default demo notebook will be started: {default_path}"
         )
+        sly.fs.copy_file(src=default_nb, dst=default_path)
     else:
         default_nb = sly.fs.get_file_name_with_ext(input_file)
         default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
