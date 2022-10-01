@@ -68,4 +68,4 @@ docker run --rm -it -p 8000:8000 jupyter/datascience-notebook /bin/bash -c "jupy
 
 ## Acknowledgment
 
-This app is based on the great work of `Jupyterlab` team ([github](https://github.com/jupyterlab/jupyterlab-git)). ![GitHub Org's stars](https://img.shields.io/github/stars/jupyter/jupyter?style=social)
+This app is based on the great work of `Jupyterlab` team ([github](https://github.com/jupyter/jupyter)). ![GitHub Org's stars](https://img.shields.io/github/stars/jupyter/jupyter?style=social)
