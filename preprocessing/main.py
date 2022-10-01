@@ -39,20 +39,28 @@ else:
 
 sly.logger.info(f"Default notebook: {default_path}")
 
-
-subprocess.Popen(
-    shlex.split(
-        f'jupyter lab \
-            --ip=0.0.0.0 \
-            --port=8000 \
-            --allow-root \
-            --ServerApp.token="" \
-            --ServerApp.password="" \
-            --ServerApp.notebook_dir="{sly.app.get_data_dir()}" \
-            --ServerApp.allow_origin=* \
-            --ServerApp.base_url=$BASE_URL \
-            --ServerApp.trust_xheaders=True \
-            --ServerApp.disable_check_xsrf=True \
-            --LabApp.default_url="/lab/tree/{default_nb}"'
+try:
+    process = subprocess.run(
+        shlex.split(
+            f'jupyter lab \
+                --ip=0.0.0.0 \
+                --port=8000 \
+                --allow-root \
+                --ServerApp.token="" \
+                --ServerApp.password="" \
+                --ServerApp.notebook_dir="{sly.app.get_data_dir()}" \
+                --ServerApp.allow_origin=* \
+                --ServerApp.base_url=$BASE_URL \
+                --ServerApp.trust_xheaders=True \
+                --ServerApp.disable_check_xsrf=True \
+                --LabApp.default_url="/lab/tree/{default_nb}"'
+        ),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        universal_newlines=True,
     )
-)
+    process.check_returncode()
+    sly.logger.info(f"jupyter lab have been successfully finished")
+except Exception as e:
+    print(repr(e))
+    raise e
