@@ -54,9 +54,11 @@ Drag and drop file from your computer to the notebook.
 
 Once your work with Jupyter is finished, you need to do the following steps:
 
-1. ✅✅✅ Important ✅✅✅: Download files from Jupyter to you local computer. By default all app files are stored on the computer where your Supervisely Agent is running. All details about how to store your notebooks in Supervisely, how to access them at any time in Team Files and how to find them on the your computer with Agent will be covered soon in [Advanced usage chapter](#Advanced-usage).
+1. ✅✅✅ Important ✅✅✅: Download files from Jupyter to you local computer before shutdown. By default all app files are stored on the computer where your Supervisely Agent is running. All details about how to store your notebooks in Supervisely, how to access them at any time in Team Files and how to find them on the your computer with Agent will be covered soon in [Advanced usage chapter](#Advanced-usage).
 
 2. Shutdown app
+
+<img src="https://user-images.githubusercontent.com/12828725/193442152-1a4912a4-8157-4f61-9c15-aa46c408a7a5.gif">
 
 ## Advanced usage
 
