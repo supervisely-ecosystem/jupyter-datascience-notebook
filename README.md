@@ -1,14 +1,13 @@
 <div align="center" markdown>
-<img src="https://user-images.githubusercontent.com/48913536/193065037-3ad134cb-194f-4016-882e-326587ee096f.png"/>  
+<img src="https://user-images.githubusercontent.com/48913536/193065037-3ad134cb-194f-4016-882e-326587ee096f.png"/>
 
 # Jupyter Datascience Notebook
 
 <p align="center">
   <a href="#Overview">Overview</a> •
-  <a href="#How-To-Run">How To Run</a> •
+  <a href="#Basic-usage">Basic usage</a> •
+  <a href="#Advanced-usage">Advanced usage</a> •
   <a href="#Demo">Demo</a> •
-  <a href="#Requirements">Requirements</a> •
-  <a href="#Debug">Debug</a> •
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
 
@@ -24,47 +23,56 @@
 
 The Jupyter Notebook is the original web application for creating and sharing computational documents.
 It offers a simple, streamlined, document-centric experience.
-You can run JupyterLab server (app) from Supervisely on your computer with preinstalled Supervisely Agent.
-Files will be saved directly on the agent, or you can synchronize it with Git.
 
-**⚠️App can be launched only on USER agents ⚠️**
+You can run JupyterLab server (app) from Supervisely on your computer with preinstalled Supervisely Agent. It comes with default `demo.ipynb` notebook for quick tests.
 
-## How to Run
+**🌎 Note For Comunity Edition Users 🌎**
 
-**Step 1.** Run the app from Ecosystem
+Community users can run this application only on their own agents. Just go to Cluster page and connect your computer to your Supervisely account ([how to video](https://youtu.be/aDqQiYycqyk)).
 
-<img src="https://user-images.githubusercontent.com/48913536/193070478-50518ebd-d94b-404c-81f8-ded7267163d7.png" width="80%" style='padding-top: 10px'>  
+## Basic usage
 
-**Step 2.** Wait for jupyter server to start, demo notebook will show up.
+### How to run
 
-<img src="https://user-images.githubusercontent.com/48913536/193070501-8b53e9cd-6a37-41fb-8b5f-3d55d6c893dd.png" width="80%" style='padding-top: 10px'>
+Run the app from Ecosystem. Wait for jupyter server to start, demo notebook will show up.
+
+<img src="https://user-images.githubusercontent.com/12828725/193441522-fa6c062c-17b9-4419-838d-b032586a181a.gif">
+
+### How to download from Jupyter
+
+Right click on file -> select Download context menu.
+
+<img src="https://user-images.githubusercontent.com/12828725/193441635-fa7b9672-b533-48f3-ae43-fae32834fb22.png">
+
+### Upload custom notebook from your computer to Jupyter
+
+Drag and drop file from your computer to the notebook.
+
+<img src="https://user-images.githubusercontent.com/12828725/193441748-9e04b4f4-d69b-4662-8f80-27681fc22a39.gif">
+
+### Shutdown application
+
+Once your work with Jupyter is finished, you need to do the following steps:
+
+1. ✅✅✅ Important ✅✅✅: Download files from Jupyter to you local computer. By default all app files are stored on the computer where your Supervisely Agent is running. All details about how to store your notebooks in Supervisely, how to access them at any time in Team Files and how to find them on the your computer with Agent will be covered soon in [Advanced usage chapter](#Advanced-usage).
+
+2. Shutdown app
+
+## Advanced usage
+
+Will be ready soon. This section will explain, how to store your notebooks in Supervisely, how to find them on your computer, how to preview them in `Team Files`.
 
 ## Demo
 
 Supervisely jupyter datascience notebook app comes with an example notebook explaining how to:
 
-1) Create supervisely API object
-2) Get user info
-3) List all the user teams
+1. Create supervisely API object
+2. Get user info
+3. List all the user teams
+
+Learn more about Supervisely automation in [Supervisely Developer Portal](https://developer.supervise.ly/).
 
 <img src="https://user-images.githubusercontent.com/48913536/193070525-cc49875c-38d9-496d-ae3d-764805cbc444.png" width="80%" style='padding-top: 10px'>
-
-
-## Requirements
-
-```requirements.txt
-Docker version >= 20.10.18
-```
-
-## Debug
-
-```shell
-docker run --rm -it -p 8000:8000 jupyter/datascience-notebook /bin/bash -c "jupyter lab --ip=0.0.0.0 --port=8000 --allow-root --NotebookApp.base_url='my-app'"
-```
-
-```shell
-docker run --rm -it -p 8000:8000 jupyter/datascience-notebook /bin/bash -c "jupyter lab --ip=0.0.0.0 --port=8000 --allow-root --NotebookApp.base_url='${BASE_URL}'"
-```
 
 ## Acknowledgment
 
