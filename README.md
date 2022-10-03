@@ -62,7 +62,20 @@ Once your work with Jupyter is finished, you need to do the following steps:
 
 ## Advanced usage
 
-Will be ready soon. This section will explain, how to store your notebooks in Supervisely, how to find them on your computer, how to preview them in `Team Files`.
+This section will explain, how to store your notebooks in Supervisely, how to find them on your computer, how to preview them in `Team Files`.
+
+Every notebook in team files can be quickly previewed before run:
+
+<img src="https://user-images.githubusercontent.com/12828725/193596703-d1ace1c2-e60d-48c6-a2a4-cf0899666079.gif">
+
+You also can run Jupyter notebook from Team File (use existing notebook or upload from your computer using drag-and-drop):
+
+<img src="https://user-images.githubusercontent.com/12828725/193598144-77796726-6f42-4520-b3b1-780b3deac611.gif">
+
+
+By default all your notebooks are stored on the computer where agent is running. Also Supervisely allows to preview agent's files right in Team Files in web interface. You can open session info in get the paths where files are actually stored on your computer or get the link to Team Files to preview them in Supervisely:
+
+<img src="https://user-images.githubusercontent.com/12828725/193599997-fb8061c8-0a1e-472a-886d-c00d665bb98f.gif">
 
 ## Demo
 
@@ -74,7 +87,7 @@ Supervisely jupyter datascience notebook app comes with an example notebook expl
 
 Learn more about Supervisely automation in [Supervisely Developer Portal](https://developer.supervise.ly/).
 
-<img src="https://user-images.githubusercontent.com/48913536/193070525-cc49875c-38d9-496d-ae3d-764805cbc444.png" width="80%" style='padding-top: 10px'>
+<img src="https://user-images.githubusercontent.com/12828725/193601181-76fbca3d-ced9-4cb4-9ae9-cee6ae576704.png">
 
 ## Acknowledgment
 
