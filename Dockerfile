@@ -2,7 +2,7 @@ FROM jupyter/datascience-notebook
 
 USER root
 
-RUN pip install supervisely==6.66.8
+RUN pip install supervisely
 
 WORKDIR /sly-app-data
 
