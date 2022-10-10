@@ -15,8 +15,8 @@
   "integrated_into": ["standalone"],
   "store_data_on_agent": true,
   "community_agent": false,
-  "min_agent_version": "6.7.0",
-  "min_instance_version": "6.5.44",
+  "min_agent_version": "6.7.2",
+  "min_instance_version": "6.5.46",
   "context_menu": {
     "target": ["ecosystem", "files_file", "agent_file"]
   }
