@@ -7,7 +7,7 @@
   "icon": "https://img.icons8.com/fluency/144/000000/jupyter.png",
   "icon_background": "#FFFFFF",
   "poster": "https://user-images.githubusercontent.com/48913536/193065037-3ad134cb-194f-4016-882e-326587ee096f.png",
-  "docker_image": "supervisely/jupyter-datascience-notebook:1.0.12",
+  "docker_image": "supervisely/jupyter-datascience-notebook:1.0.13",
   "entrypoint": "sh run.sh",
   "port": 8000,
   "proxyKeepUrl": true,
@@ -18,6 +18,12 @@
   "min_agent_version": "6.7.2",
   "min_instance_version": "6.5.46",
   "context_menu": {
-    "target": ["ecosystem", "files_file", "agent_file"]
+    "target": [
+      "ecosystem",
+      "files_file",
+      "files_folder",
+      "agent_file",
+      "agent_folder"
+    ]
   }
 }

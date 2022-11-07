@@ -34,7 +34,7 @@ Community users can run this application only on their own agents. Just go to Cl
 
 ### How to run
 
-Run the app from Ecosystem. Wait for jupyter server to start, demo notebook will show up.
+Run app from the `.ipynb` **file in Team Files** or from the **folder in Team files**. For quick start to try demo notebook you can run the app **from Ecosystem**. Wait for jupyter server to start, demo notebook will show up.
 
 <img src="https://user-images.githubusercontent.com/12828725/193441522-fa6c062c-17b9-4419-838d-b032586a181a.gif">
 

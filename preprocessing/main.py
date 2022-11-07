@@ -10,40 +10,54 @@ if sly.is_development():
     load_dotenv("preprocessing/local.env")
     load_dotenv(os.path.expanduser("~/supervisely.env"))
 
-input_file = os.environ.get("CONTEXT_SLYFILE")
-team_id = int(os.environ["CONTEXT_TEAMID"])
+
+input_folder = sly.env.folder(raise_not_found=False)
+input_file = sly.env.file(raise_not_found=False)
+
+# input_file = os.environ.get("CONTEXT_SLYFILE")
+team_id = sly.env.team_id() 
+#int(os.environ["CONTEXT_TEAMID"])
 
 default_nb = "demo.ipynb"
 default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
 
 
-if input_file is None:
+if input_file is None and input_folder is None:
     sly.logger.info("App is started from ecosystem")
     sly.fs.copy_file(src=default_nb, dst=default_path)
+    default_url = f"/lab/tree/{default_nb}"
 else:
-    sly.logger.info(f"App is started from context menu of file in TeamFiles: {input_file}")
-    ext = sly.fs.get_file_ext(input_file)
-    if ext != ".ipynb":
-        sly.logger.warn(
-            "JupyterLab Notebook can only be started from the context menu of '.ipynb' file or from Ecosystem. \n"
-            + f"Default demo notebook will be started: {default_path}"
-        )
-        sly.fs.copy_file(src=default_nb, dst=default_path)
-    else:
-        default_nb = sly.fs.get_file_name_with_ext(input_file)
-        default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
+    if input_file is not None:
+        sly.logger.info(f"App is started from file context menu in TeamFiles: {input_file}")
+        ext = sly.fs.get_file_ext(input_file)
+        
+        if ext != ".ipynb":
+            sly.logger.warn(
+                "JupyterLab Notebook can only be started from the context menu of '.ipynb' file or from Ecosystem. \n"
+                + f"Default demo notebook will be started: {default_path}"
+            )
+            sly.fs.copy_file(src=default_nb, dst=default_path)
+        else:
+            default_nb = sly.fs.get_file_name_with_ext(input_file)
+            default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
 
+            api = sly.Api()
+            api.file.download(
+                team_id,
+                remote_path=input_file,
+                local_save_path=os.path.join(sly.app.get_synced_data_dir(), default_nb),
+            )
+        default_url = f"/lab/tree/{default_nb}"
+    else:
+        # input directory
+        default_path = sly.app.get_synced_data_dir()
         api = sly.Api()
-        api.file.download(
-            team_id,
-            remote_path=input_file,
-            local_save_path=os.path.join(sly.app.get_synced_data_dir(), default_nb),
-        )
+        api.file.download_directory(team_id, remote_path=input_folder, local_save_path=default_path)
+        default_url = "/lab"
 
 sly.logger.info(f"Default notebook: {default_path}")
-
 with open("default_url.txt", "w") as text_file:
-    text_file.write(f"/lab/tree/{default_nb}")
+    text_file.write(default_url)
 
 # try:
 #     process = subprocess.run(
