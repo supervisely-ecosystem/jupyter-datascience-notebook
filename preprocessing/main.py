@@ -51,7 +51,7 @@ else:
         default_path = sly.app.get_synced_data_dir()
         api = sly.Api()
         api.file.download_directory(team_id, remote_path=input_folder, local_save_path=default_path)
-        default_url = "/"
+        default_url = "/lab"
 
 sly.logger.info(f"Default notebook: {default_path}")
 with open("default_url.txt", "w") as text_file:
