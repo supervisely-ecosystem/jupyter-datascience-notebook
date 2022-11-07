@@ -20,7 +20,7 @@ team_id = sly.env.team_id()
 
 default_nb = "demo.ipynb"
 default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
-
+default_url = f"/lab/tree/{default_nb}"
 
 if input_file is None and input_folder is None:
     sly.logger.info("App is started from ecosystem")
@@ -51,11 +51,11 @@ else:
         default_path = sly.app.get_synced_data_dir()
         api = sly.Api()
         api.file.download_directory(team_id, remote_path=input_folder, local_save_path=default_path)
-        default_nb = ""
+        default_url = "/tree"
 
 sly.logger.info(f"Default notebook: {default_path}")
 with open("default_url.txt", "w") as text_file:
-    text_file.write(f"/lab/tree/{default_nb}")
+    text_file.write(default_url)
 
 # try:
 #     process = subprocess.run(
