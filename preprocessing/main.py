@@ -26,7 +26,6 @@ if input_file is None and input_folder is None:
     sly.logger.info("App is started from ecosystem")
     sly.fs.copy_file(src=default_nb, dst=default_path)
 else:
-    
     if input_file is not None:
         sly.logger.info(f"App is started from file context menu in TeamFiles: {input_file}")
         ext = sly.fs.get_file_ext(input_file)
@@ -48,12 +47,13 @@ else:
                 local_save_path=os.path.join(sly.app.get_synced_data_dir(), default_nb),
             )
     else:
+        # input directory
         default_path = sly.app.get_synced_data_dir()
         api = sly.Api()
         api.file.download_directory(team_id, remote_path=input_folder, local_save_path=default_path)
+        default_nb = ""
 
 sly.logger.info(f"Default notebook: {default_path}")
-
 with open("default_url.txt", "w") as text_file:
     text_file.write(f"/lab/tree/{default_nb}")
 
