@@ -20,11 +20,12 @@ team_id = sly.env.team_id()
 
 default_nb = "demo.ipynb"
 default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
-default_url = f"/lab/tree/{default_nb}"
+
 
 if input_file is None and input_folder is None:
     sly.logger.info("App is started from ecosystem")
     sly.fs.copy_file(src=default_nb, dst=default_path)
+    default_url = f"/lab/tree/{default_nb}"
 else:
     if input_file is not None:
         sly.logger.info(f"App is started from file context menu in TeamFiles: {input_file}")
@@ -46,6 +47,7 @@ else:
                 remote_path=input_file,
                 local_save_path=os.path.join(sly.app.get_synced_data_dir(), default_nb),
             )
+        default_url = f"/lab/tree/{default_nb}"
     else:
         # input directory
         default_path = sly.app.get_synced_data_dir()
