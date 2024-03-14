@@ -1,1 +1,0 @@
-supervisely==v6.73.50
