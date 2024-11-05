@@ -11,11 +11,11 @@
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/jupyter-datascience-notebook)
-[![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervise.ly/slack)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/jupyter-datascience-notebook)
+[![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/jupyter-datascience-notebook)
-[![views](https://app.supervise.ly/img/badges/views/supervisely-ecosystem/jupyter-datascience-notebook.png)](https://supervise.ly)
-[![runs](https://app.supervise.ly/img/badges/runs/supervisely-ecosystem/jupyter-datascience-notebook.png)](https://supervise.ly)
+[![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/jupyter-datascience-notebook.png)](https://supervisely.com)
+[![runs](https://app.supervisely.com/img/badges/runs/supervisely-ecosystem/jupyter-datascience-notebook.png)](https://supervisely.com)
 
 </div>
 
@@ -85,7 +85,7 @@ Supervisely jupyter datascience notebook app comes with an example notebook expl
 2. Get user info
 3. List all the user teams
 
-Learn more about Supervisely automation in [Supervisely Developer Portal](https://developer.supervise.ly/).
+Learn more about Supervisely automation in [Supervisely Developer Portal](https://developer.supervisely.com/).
 
 <img src="https://user-images.githubusercontent.com/12828725/193601181-76fbca3d-ced9-4cb4-9ae9-cee6ae576704.png">
 
