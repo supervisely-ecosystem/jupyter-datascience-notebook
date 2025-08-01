@@ -15,8 +15,8 @@ input_folder = sly.env.folder(raise_not_found=False)
 input_file = sly.env.file(raise_not_found=False)
 
 # input_file = os.environ.get("CONTEXT_SLYFILE")
-team_id = sly.env.team_id() 
-#int(os.environ["CONTEXT_TEAMID"])
+team_id = sly.env.team_id()
+# int(os.environ["CONTEXT_TEAMID"])
 
 default_nb = "demo.ipynb"
 default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
@@ -28,9 +28,11 @@ if input_file is None and input_folder is None:
     default_url = f"/lab/tree/{default_nb}"
 else:
     if input_file is not None:
-        sly.logger.info(f"App is started from file context menu in TeamFiles: {input_file}")
+        sly.logger.info(
+            f"App is started from file context menu in TeamFiles: {input_file}"
+        )
         ext = sly.fs.get_file_ext(input_file)
-        
+
         if ext != ".ipynb":
             sly.logger.warn(
                 "JupyterLab Notebook can only be started from the context menu of '.ipynb' file or from Ecosystem. \n"
@@ -39,7 +41,12 @@ else:
             sly.fs.copy_file(src=default_nb, dst=default_path)
         else:
             default_nb = sly.fs.get_file_name_with_ext(input_file)
+            # Replace all the spaces in the filename with underscores to avoid issues with JupyterLab.
+            default_nb = default_nb.replace(" ", "_")
             default_path = os.path.join(sly.app.get_synced_data_dir(), default_nb)
+            sly.logger.info(
+                f"Downloading file {input_file} to {default_path} for JupyterLab"
+            )
 
             api = sly.Api()
             api.file.download(
@@ -52,7 +59,9 @@ else:
         # input directory
         default_path = sly.app.get_synced_data_dir()
         api = sly.Api()
-        api.file.download_directory(team_id, remote_path=input_folder, local_save_path=default_path)
+        api.file.download_directory(
+            team_id, remote_path=input_folder, local_save_path=default_path
+        )
         default_url = "/lab"
 
 sly.logger.info(f"Default notebook: {default_path}")
